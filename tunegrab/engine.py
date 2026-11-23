@@ -254,6 +254,19 @@ def kill_all() -> None:
             pass
 
 
+def is_safe_url(u: str) -> bool:
+    """Only plain http(s) URLs with a host — never something yt-dlp could read as an option."""
+    from urllib.parse import urlsplit
+
+    if not isinstance(u, str) or not u or u.startswith("-") or any(c.isspace() for c in u):
+        return False
+    try:
+        p = urlsplit(u)
+    except ValueError:
+        return False
+    return p.scheme in ("http", "https") and bool(p.hostname)
+
+
 def _run_proc(args, cancel, on_line=None) -> tuple[int, str, str]:
     if cancel.is_set():
         raise Cancelled()
@@ -326,7 +339,9 @@ class Item:
 
 def expand(url: str, cancel) -> list[Item]:
     """Turn a link (video or playlist) into a list of items."""
-    code, out, err = _run_proc(_base_args() + ["--flat-playlist", "-J", url], cancel)
+    if not is_safe_url(url):
+        raise FriendlyError("err_unsupported", f"rejected url: {url[:200]!r}")
+    code, out, err = _run_proc(_base_args() + ["--flat-playlist", "-J", "--", url], cancel)
     if code != 0 or not out.strip():
         raise FriendlyError(classify_error(err), _last_error(err))
     data = json.loads(out)
@@ -339,8 +354,10 @@ def expand(url: str, cancel) -> list[Item]:
         u = e.get("webpage_url") or e.get("url") or url
         if e.get("ie_key") == "Youtube" or (e.get("id") and "youtube" in (e.get("extractor_key") or e.get("ie_key") or "").lower()):
             u = f"https://www.youtube.com/watch?v={e['id']}"
-        it = Item(url=u, title=e.get("title") or u, vid=e.get("id") or "", duration=e.get("duration"))
-        if live:
+        it = Item(url=u, title=str(e.get("title") or u), vid=str(e.get("id") or ""), duration=e.get("duration"))
+        if not is_safe_url(u):
+            it.status, it.error = "st_error", "err_unsupported"
+        elif live:
             it.status, it.error = "st_error", "err_live"
         items.append(it)
     return items
@@ -379,6 +396,8 @@ def describe(info: dict) -> tuple[str, str, str | None, str]:
 
 def download_item(item: Item, folder: Path, kbps: int, cancel, on_status) -> Path:
     """Full pipeline for one item. on_status(key, params)."""
+    if not is_safe_url(item.url):
+        raise FriendlyError("err_unsupported", f"rejected url: {item.url[:200]!r}")
     folder.mkdir(parents=True, exist_ok=True)
     quick = folder / (safe_filename(item.title) + ".mp3")
     if item.title != item.url and quick.exists():
@@ -394,7 +413,7 @@ def download_item(item: Item, folder: Path, kbps: int, cancel, on_status) -> Pat
             "--match-filter", "!is_live", "--newline",
             "--progress-template",
             "download:TGPROG %(progress.downloaded_bytes)s %(progress.total_bytes)s %(progress.total_bytes_estimate)s",
-            "-o", "media.%(ext)s", "-P", str(tmp), item.url,
+            "-o", "media.%(ext)s", "-P", str(tmp), "--", item.url,
         ]
 
         def on_line(line: str):
