@@ -10,6 +10,7 @@ from __future__ import annotations
 import hmac
 import json
 import os
+import re
 import secrets
 import socket
 import sys
@@ -27,13 +28,33 @@ MAX_MSG = 256 * 1024
 YOUTUBE_HOSTS = {"youtube.com", "www.youtube.com", "m.youtube.com", "music.youtube.com", "youtu.be"}
 
 
-def is_youtube(u: str) -> bool:
+def youtube_link(u: str) -> str | None:
     """Links that arrive from outside the window (browser, tunegrab://, second launch)
-    are limited to YouTube, so a random web page can't make Tunegrab fetch other addresses."""
-    if not engine.is_safe_url(u):
-        return False
-    host = (urlsplit(u).hostname or "").lower()
-    return urlsplit(u).scheme == "https" and host in YOUTUBE_HOSTS
+    are limited to YouTube, so a random web page can't make Tunegrab fetch other addresses.
+    Returns a canonical URL rebuilt from checked parts, or None."""
+    if not engine.is_safe_url(u) or any(c in u for c in "\\@"):
+        return None
+    try:
+        p = urlsplit(u)
+        port = p.port
+    except ValueError:
+        return None
+    netloc = p.netloc.lower()
+    if p.scheme != "https" or port is not None or p.username or p.password or netloc not in YOUTUBE_HOSTS:
+        return None
+    if any(not (ch.isalnum() or ch in "/-_.~") for ch in p.path):
+        return None
+    if any(not (ch.isalnum() or ch in "=&-_.~%") for ch in p.query):
+        return None
+    path = p.path
+    allowed = (
+        (netloc == "youtu.be" and re.fullmatch(r"/[\w-]{5,20}", path))
+        or path in ("/watch", "/playlist")
+        or re.fullmatch(r"/shorts/[\w-]{5,20}", path)
+    )
+    if not allowed:
+        return None
+    return f"https://{netloc}{p.path}" + (f"?{p.query}" if p.query else "")
 
 
 def parse_args(argv: list[str]) -> list[str]:
@@ -46,8 +67,9 @@ def parse_args(argv: list[str]) -> list[str]:
         else:
             urls += engine.extract_links(a)
     out, seen = [], set()
-    for u in urls:
-        if is_youtube(u) and u not in seen:
+    for raw in urls:
+        u = youtube_link(raw)
+        if u and u not in seen:
             seen.add(u)
             out.append(u)
     return out[:500]
@@ -105,7 +127,7 @@ class Server:
                 msg = json.loads(data.split(b"\n", 1)[0].decode("utf-8"))
                 if not hmac.compare_digest(str(msg.get("token", "")), self.token):
                     return
-                urls = [u for u in msg.get("urls", []) if isinstance(u, str) and is_youtube(u)][:500]
+                urls = [c for c in (youtube_link(u) for u in msg.get("urls", []) if isinstance(u, str)) if c][:500]
                 conn.sendall(b"ok\n")
                 self.on_urls(urls)
             except Exception:
