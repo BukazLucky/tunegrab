@@ -1,0 +1,50 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: botão MP3"
+  },
+  "ext_description": {
+    "message": "Adiciona um botão MP3 abaixo dos vídeos do YouTube. Com um clique, o vídeo vai para o app gratuito Tunegrab para Windows."
+  },
+  "action_title": {
+    "message": "Enviar este vídeo para o Tunegrab"
+  },
+  "button_title": {
+    "message": "Baixar MP3 com o Tunegrab"
+  },
+  "sent": {
+    "message": "Enviado"
+  },
+  "menu_send": {
+    "message": "Baixar MP3 com o Tunegrab"
+  },
+  "w_subtitle": {
+    "message": "MP3 em um clique, direto do YouTube"
+  },
+  "w_step1_title": {
+    "message": "Baixe o app Tunegrab"
+  },
+  "w_step1_text": {
+    "message": "A extensão só passa o link; o app gratuito Tunegrab para Windows baixa e converte o áudio. Baixe e abra uma vez."
+  },
+  "w_step1_button": {
+    "message": "Baixar Tunegrab para Windows"
+  },
+  "w_step2_title": {
+    "message": "Abra qualquer vídeo do YouTube"
+  },
+  "w_step2_text": {
+    "message": "Ao lado do botão Gostei você verá um novo botão MP3. No Shorts e nas playlists, ele flutua no canto inferior direito. Você também pode clicar com o botão direito em um link do YouTube ou clicar no ícone do Tunegrab na barra de ferramentas."
+  },
+  "w_step3_title": {
+    "message": "Permita uma vez"
+  },
+  "w_step3_text": {
+    "message": "Na primeira vez, o navegador pergunta se pode abrir o Tunegrab. Marque \"Sempre permitir\" e clique em Abrir. Depois disso, um clique basta."
+  },
+  "w_privacy": {
+    "message": "Privacidade: a extensão não coleta, armazena nem envia dados. Ela só lê o endereço da página do YouTube quando você clica."
+  },
+  "w_more": {
+    "message": "Ajuda, código-fonte e atualizações no GitHub"
+  }
+}

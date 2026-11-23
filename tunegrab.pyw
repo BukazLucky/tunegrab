@@ -28,6 +28,12 @@ if __name__ == "__main__":
     if len(sys.argv) == 4 and sys.argv[1] == "--selftest":
         selftest(sys.argv[2], sys.argv[3])
     else:
+        from tunegrab import bridge
+
+        urls = bridge.parse_args(sys.argv[1:])
+        # Tunegrab already open? Hand the links over (or just bring it to front) and quit.
+        if bridge.send_to_running(urls):
+            sys.exit(0)
         from tunegrab.app import main
 
-        main()
+        main(urls)

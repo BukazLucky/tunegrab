@@ -47,5 +47,6 @@
   "new_version": "Nova versão {v} disponível — clique para baixar",
   "confirm_close": "Há um download em andamento. Sair mesmo assim?",
   "legal": "Baixe apenas conteúdo que você tem o direito de baixar.",
-  "help": "Ajuda"
+  "help": "Ajuda",
+  "from_browser": "Link recebido do navegador"
 }

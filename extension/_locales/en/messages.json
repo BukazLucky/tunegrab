@@ -1,0 +1,52 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: MP3 button",
+    "description": "Extension name in the store (max 45 characters)"
+  },
+  "ext_description": {
+    "message": "Adds an MP3 button under YouTube videos. One click sends the video to the free Tunegrab app for Windows.",
+    "description": "Store description (max 132 characters)"
+  },
+  "action_title": {
+    "message": "Send this video to Tunegrab"
+  },
+  "button_title": {
+    "message": "Download MP3 with Tunegrab"
+  },
+  "sent": {
+    "message": "Sent"
+  },
+  "menu_send": {
+    "message": "Download MP3 with Tunegrab"
+  },
+  "w_subtitle": {
+    "message": "MP3 in one click, right from YouTube"
+  },
+  "w_step1_title": {
+    "message": "Get the Tunegrab app"
+  },
+  "w_step1_text": {
+    "message": "The extension only passes the link; the free Tunegrab app for Windows downloads and converts the audio. Download it and open it once."
+  },
+  "w_step1_button": {
+    "message": "Download Tunegrab for Windows"
+  },
+  "w_step2_title": {
+    "message": "Open any YouTube video"
+  },
+  "w_step2_text": {
+    "message": "Next to the Like button you'll see a new MP3 button. On Shorts and playlists it floats in the bottom-right corner. You can also right-click a YouTube link, or click the Tunegrab icon in the toolbar."
+  },
+  "w_step3_title": {
+    "message": "Allow it once"
+  },
+  "w_step3_text": {
+    "message": "The first time, your browser asks whether to open Tunegrab. Tick \"Always allow\" and click Open. After that, one click is enough."
+  },
+  "w_privacy": {
+    "message": "Privacy: the extension doesn't collect, store or send any data. It only reads the address of the YouTube page when you click it."
+  },
+  "w_more": {
+    "message": "Help, source code and updates on GitHub"
+  }
+}

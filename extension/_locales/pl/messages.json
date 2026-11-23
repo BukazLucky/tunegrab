@@ -1,0 +1,50 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: przycisk MP3"
+  },
+  "ext_description": {
+    "message": "Dodaje przycisk MP3 pod filmami YouTube. Jedno kliknięcie wysyła film do darmowej aplikacji Tunegrab dla Windows."
+  },
+  "action_title": {
+    "message": "Wyślij ten film do Tunegrab"
+  },
+  "button_title": {
+    "message": "Pobierz MP3 z Tunegrab"
+  },
+  "sent": {
+    "message": "Wysłano"
+  },
+  "menu_send": {
+    "message": "Pobierz MP3 z Tunegrab"
+  },
+  "w_subtitle": {
+    "message": "MP3 jednym kliknięciem, prosto z YouTube"
+  },
+  "w_step1_title": {
+    "message": "Zainstaluj aplikację Tunegrab"
+  },
+  "w_step1_text": {
+    "message": "Rozszerzenie przekazuje tylko link; darmowa aplikacja Tunegrab dla Windows pobiera i konwertuje dźwięk. Pobierz ją i otwórz raz."
+  },
+  "w_step1_button": {
+    "message": "Pobierz Tunegrab dla Windows"
+  },
+  "w_step2_title": {
+    "message": "Otwórz dowolny film na YouTube"
+  },
+  "w_step2_text": {
+    "message": "Obok przycisku Lubię to zobaczysz nowy przycisk MP3. W Shorts i playlistach unosi się w prawym dolnym rogu. Możesz też kliknąć prawym przyciskiem na link YouTube albo ikonę Tunegrab na pasku narzędzi."
+  },
+  "w_step3_title": {
+    "message": "Zezwól raz"
+  },
+  "w_step3_text": {
+    "message": "Za pierwszym razem przeglądarka pyta, czy otworzyć Tunegrab. Zaznacz \"Zawsze zezwalaj\" i kliknij Otwórz. Potem wystarczy jedno kliknięcie."
+  },
+  "w_privacy": {
+    "message": "Prywatność: rozszerzenie nie zbiera, nie przechowuje ani nie wysyła żadnych danych. Odczytuje tylko adres strony YouTube, gdy klikniesz."
+  },
+  "w_more": {
+    "message": "Pomoc, kod źródłowy i aktualizacje na GitHub"
+  }
+}

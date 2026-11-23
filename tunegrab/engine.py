@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 APP_NAME = "Tunegrab"
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 REPO = "BukazLucky/tunegrab"
 
 DATA_DIR = Path(os.environ.get("LOCALAPPDATA") or Path.home()) / APP_NAME

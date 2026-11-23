@@ -47,5 +47,6 @@
   "new_version": "Neue Version {v} verfügbar — zum Herunterladen klicken",
   "confirm_close": "Ein Download läuft. Trotzdem beenden?",
   "legal": "Lade nur Inhalte herunter, die du herunterladen darfst.",
-  "help": "Hilfe"
+  "help": "Hilfe",
+  "from_browser": "Link vom Browser empfangen"
 }

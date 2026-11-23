@@ -47,5 +47,6 @@
   "new_version": "新版本 {v} 可用 — 点击下载",
   "confirm_close": "正在下载。确定要退出吗？",
   "legal": "请仅下载你有权下载的内容。",
-  "help": "帮助"
+  "help": "帮助",
+  "from_browser": "已从浏览器收到链接"
 }

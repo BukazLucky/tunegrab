@@ -1,0 +1,50 @@
+{
+  "ext_name": {
+    "message": "Tunegrab：MP3 按钮"
+  },
+  "ext_description": {
+    "message": "在 YouTube 视频下方添加 MP3 按钮。一键即可将视频发送到免费的 Windows 版 Tunegrab 应用。"
+  },
+  "action_title": {
+    "message": "将此视频发送到 Tunegrab"
+  },
+  "button_title": {
+    "message": "用 Tunegrab 下载 MP3"
+  },
+  "sent": {
+    "message": "已发送"
+  },
+  "menu_send": {
+    "message": "用 Tunegrab 下载 MP3"
+  },
+  "w_subtitle": {
+    "message": "一键下载 MP3，直接从 YouTube 开始"
+  },
+  "w_step1_title": {
+    "message": "获取 Tunegrab 应用"
+  },
+  "w_step1_text": {
+    "message": "扩展只负责传递链接；免费的 Windows 版 Tunegrab 应用会下载并转换音频。下载后打开一次即可。"
+  },
+  "w_step1_button": {
+    "message": "下载 Windows 版 Tunegrab"
+  },
+  "w_step2_title": {
+    "message": "打开任意 YouTube 视频"
+  },
+  "w_step2_text": {
+    "message": "在“赞”按钮旁边会出现一个新的 MP3 按钮。在 Shorts 和播放列表中，它会浮在右下角。你也可以右键点击 YouTube 链接，或点击工具栏中的 Tunegrab 图标。"
+  },
+  "w_step3_title": {
+    "message": "允许一次"
+  },
+  "w_step3_text": {
+    "message": "第一次使用时，浏览器会询问是否打开 Tunegrab。勾选“始终允许”并点击“打开”。之后只需一键即可。"
+  },
+  "w_privacy": {
+    "message": "隐私：扩展不会收集、存储或发送任何数据。它只会在你点击时读取 YouTube 页面的地址。"
+  },
+  "w_more": {
+    "message": "帮助、源代码和更新请见 GitHub"
+  }
+}

@@ -47,5 +47,6 @@
   "new_version": "Yeni sürüm {v} hazır — indirmek için tıkla",
   "confirm_close": "Bir indirme sürüyor. Yine de çıkılsın mı?",
   "legal": "Sadece indirme hakkına sahip olduğun içerikleri indir.",
-  "help": "Yardım"
+  "help": "Yardım",
+  "from_browser": "Bağlantı tarayıcıdan alındı"
 }

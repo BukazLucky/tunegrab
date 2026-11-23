@@ -47,5 +47,6 @@
   "new_version": "Nowa wersja {v} jest dostępna — kliknij, aby pobrać",
   "confirm_close": "Trwa pobieranie. Wyjść mimo to?",
   "legal": "Pobieraj tylko treści, do których masz prawo.",
-  "help": "Pomoc"
+  "help": "Pomoc",
+  "from_browser": "Link odebrany z przeglądarki"
 }

@@ -1,0 +1,50 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: MP3 düğmesi"
+  },
+  "ext_description": {
+    "message": "YouTube videolarının altına MP3 düğmesi ekler. Tek tıkla videoyu Windows için ücretsiz Tunegrab uygulamasına gönderir."
+  },
+  "action_title": {
+    "message": "Bu videoyu Tunegrab'a gönder"
+  },
+  "button_title": {
+    "message": "Tunegrab ile MP3 indir"
+  },
+  "sent": {
+    "message": "Gönderildi"
+  },
+  "menu_send": {
+    "message": "Tunegrab ile MP3 indir"
+  },
+  "w_subtitle": {
+    "message": "Tek tıkla MP3, doğrudan YouTube'dan"
+  },
+  "w_step1_title": {
+    "message": "Tunegrab uygulamasını edin"
+  },
+  "w_step1_text": {
+    "message": "Uzantı yalnızca bağlantıyı iletir; Windows için ücretsiz Tunegrab uygulaması sesi indirip dönüştürür. İndir ve bir kez aç."
+  },
+  "w_step1_button": {
+    "message": "Windows için Tunegrab indir"
+  },
+  "w_step2_title": {
+    "message": "Herhangi bir YouTube videosunu aç"
+  },
+  "w_step2_text": {
+    "message": "Beğen düğmesinin yanında yeni bir MP3 düğmesi görürsün. Shorts ve oynatma listelerinde sağ alt köşede yüzer. Ayrıca bir YouTube bağlantısına sağ tıklayabilir veya araç çubuğundaki Tunegrab simgesine tıklayabilirsin."
+  },
+  "w_step3_title": {
+    "message": "Bir kez izin ver"
+  },
+  "w_step3_text": {
+    "message": "İlk seferde tarayıcın Tunegrab'ı açmak isteyip istemediğini sorar. \"Her zaman izin ver\" kutusunu işaretle ve Aç'a tıkla. Sonrasında tek tık yeter."
+  },
+  "w_privacy": {
+    "message": "Gizlilik: uzantı hiçbir veri toplamaz, saklamaz veya göndermez. Yalnızca tıkladığında YouTube sayfasının adresini okur."
+  },
+  "w_more": {
+    "message": "Yardım, kaynak kodu ve güncellemeler GitHub'da"
+  }
+}

@@ -1,0 +1,34 @@
+#tunegrab-mp3-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 16px 0 12px;
+  margin-right: 8px;
+  border: 0;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #7c6cff 0%, #ec5cb2 100%);
+  color: #fff;
+  font: 500 14px/36px "Roboto", "Arial", sans-serif;
+  white-space: nowrap;
+  cursor: pointer;
+  flex: none;
+  transition: filter 0.15s ease, transform 0.15s ease;
+}
+#tunegrab-mp3-button:hover { filter: brightness(1.08); }
+#tunegrab-mp3-button:active { transform: scale(0.97); }
+#tunegrab-mp3-button:focus-visible { outline: 2px solid #7c6cff; outline-offset: 2px; }
+#tunegrab-mp3-button.tunegrab-sent { background: #1e9e63; }
+#tunegrab-mp3-button svg { flex: none; }
+
+#tunegrab-mp3-button.tunegrab-floating {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483000;
+  height: 44px;
+  padding: 0 20px 0 16px;
+  border-radius: 22px;
+  line-height: 44px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}

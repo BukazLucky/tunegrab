@@ -1,0 +1,52 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: кнопка MP3",
+    "description": "Extension name in the store (max 45 characters)"
+  },
+  "ext_description": {
+    "message": "Добавляет кнопку MP3 под видео на YouTube. Один клик — и видео уходит в бесплатную программу Tunegrab для Windows.",
+    "description": "Store description (max 132 characters)"
+  },
+  "action_title": {
+    "message": "Отправить это видео в Tunegrab"
+  },
+  "button_title": {
+    "message": "Скачать MP3 через Tunegrab"
+  },
+  "sent": {
+    "message": "Отправлено"
+  },
+  "menu_send": {
+    "message": "Скачать MP3 через Tunegrab"
+  },
+  "w_subtitle": {
+    "message": "MP3 в один клик прямо с YouTube"
+  },
+  "w_step1_title": {
+    "message": "Поставь программу Tunegrab"
+  },
+  "w_step1_text": {
+    "message": "Расширение только передаёт ссылку, а скачивает и конвертирует бесплатная программа Tunegrab для Windows. Скачай её и открой один раз."
+  },
+  "w_step1_button": {
+    "message": "Скачать Tunegrab для Windows"
+  },
+  "w_step2_title": {
+    "message": "Открой любое видео на YouTube"
+  },
+  "w_step2_text": {
+    "message": "Рядом с «Нравится» появится кнопка MP3. На Shorts и в плейлистах она висит в правом нижнем углу. Ещё можно нажать правой кнопкой по ссылке на YouTube или на иконку Tunegrab на панели браузера."
+  },
+  "w_step3_title": {
+    "message": "Разреши один раз"
+  },
+  "w_step3_text": {
+    "message": "В первый раз браузер спросит, открыть ли Tunegrab. Поставь галочку «Всегда разрешать» и нажми «Открыть». Дальше хватит одного клика."
+  },
+  "w_privacy": {
+    "message": "Конфиденциальность: расширение не собирает, не хранит и не отправляет никаких данных. Оно только читает адрес страницы YouTube, когда ты нажимаешь кнопку."
+  },
+  "w_more": {
+    "message": "Помощь, исходный код и обновления на GitHub"
+  }
+}

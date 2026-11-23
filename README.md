@@ -6,7 +6,7 @@
 
 **YouTube links → MP3. Paste, press one button, done.**
 
-A tiny, free Windows app. No ads, no account, no browser extensions.
+A tiny, free Windows app with an optional MP3 button for your browser. No ads, no account.
 
 [![Download for Windows](https://img.shields.io/badge/Download-Tunegrab.exe-6D5DF6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/BukazLucky/tunegrab/releases/latest/download/Tunegrab.exe)
 
@@ -28,6 +28,21 @@ A tiny, free Windows app. No ads, no account, no browser extensions.
 
 That's it.
 
+## MP3 button in your browser (optional)
+
+<img src="docs/extension-button.png" alt="MP3 button next to Like on YouTube" width="640">
+
+Install the **Tunegrab: MP3 button** extension and an MP3 button appears next to Like on every YouTube video
+(floating in the corner on Shorts and playlists). One click and Tunegrab starts downloading. You can also right-click
+any YouTube link, or click the Tunegrab icon in the toolbar. The extension needs the Tunegrab app and collects no data
+([privacy](PRIVACY.md)).
+
+**Install from GitHub (Chrome, Edge, Opera, Yandex, Brave):**
+1. Download `tunegrab-extension-chromium-….zip` from the [latest release](https://github.com/BukazLucky/tunegrab/releases/latest) and unzip it into a folder you'll keep.
+2. Open `chrome://extensions` (Edge: `edge://extensions`) and turn on **Developer mode**.
+3. Click **Load unpacked** and pick the unzipped folder.
+4. Open a YouTube video, click **MP3**, and when the browser asks to open Tunegrab, tick **Always allow**.
+
 ## Features
 
 - **One window, one button.** No settings you have to understand.
@@ -39,6 +54,7 @@ That's it.
 - **Keeps itself working.** The download engine updates itself once a day, so it keeps working when YouTube changes things.
 - **11 languages**, picked automatically from your Windows language: English, Español, Português, Deutsch, Français, Italiano, Polski, Türkçe, Українська, Русский, 简体中文.
 - **Light and dark mode**, following Windows.
+- **Browser button.** Optional extension: an MP3 button right on YouTube.
 
 ## First launch
 
@@ -89,6 +105,8 @@ pip install -r requirements.txt
 python tunegrab.pyw                                     # run it
 powershell -ExecutionPolicy Bypass -File build.ps1      # build dist\Tunegrab.exe
 ```
+
+The browser extension lives in `extension/`. `python tools/build_extension.py` packs it for Chromium browsers and Firefox.
 
 **Adding a language:** copy `tunegrab/locales/en.json` to `<code>.json`, translate the values (keep `{placeholders}`),
 add the code to `LANGS` in `tunegrab/app.py` and open a pull request.

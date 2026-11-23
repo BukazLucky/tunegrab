@@ -1,0 +1,50 @@
+{
+  "ext_name": {
+    "message": "Tunegrab: MP3-Button"
+  },
+  "ext_description": {
+    "message": "Fügt unter YouTube-Videos einen MP3-Button hinzu. Ein Klick schickt das Video an die kostenlose Tunegrab-App für Windows."
+  },
+  "action_title": {
+    "message": "Dieses Video an Tunegrab senden"
+  },
+  "button_title": {
+    "message": "MP3 mit Tunegrab herunterladen"
+  },
+  "sent": {
+    "message": "Gesendet"
+  },
+  "menu_send": {
+    "message": "MP3 mit Tunegrab herunterladen"
+  },
+  "w_subtitle": {
+    "message": "MP3 mit einem Klick, direkt von YouTube"
+  },
+  "w_step1_title": {
+    "message": "Hol dir die Tunegrab-App"
+  },
+  "w_step1_text": {
+    "message": "Die Erweiterung übergibt nur den Link; die kostenlose Tunegrab-App für Windows lädt das Audio herunter und konvertiert es. Lade sie herunter und öffne sie einmal."
+  },
+  "w_step1_button": {
+    "message": "Tunegrab für Windows herunterladen"
+  },
+  "w_step2_title": {
+    "message": "Öffne ein beliebiges YouTube-Video"
+  },
+  "w_step2_text": {
+    "message": "Neben dem Like-Button erscheint ein neuer MP3-Button. Bei Shorts und Playlists schwebt er unten rechts. Du kannst auch mit rechts auf einen YouTube-Link klicken oder das Tunegrab-Symbol in der Symbolleiste anklicken."
+  },
+  "w_step3_title": {
+    "message": "Einmal erlauben"
+  },
+  "w_step3_text": {
+    "message": "Beim ersten Mal fragt dein Browser, ob Tunegrab geöffnet werden darf. Setze das Häkchen bei \"Immer zulassen\" und klicke auf Öffnen. Danach genügt ein Klick."
+  },
+  "w_privacy": {
+    "message": "Datenschutz: Die Erweiterung sammelt, speichert oder sendet keine Daten. Sie liest nur die Adresse der YouTube-Seite, wenn du klickst."
+  },
+  "w_more": {
+    "message": "Hilfe, Quellcode und Updates auf GitHub"
+  }
+}

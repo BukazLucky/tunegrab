@@ -6,7 +6,7 @@
 
 **Ссылки с YouTube в MP3. Вставил, нажал одну кнопку, готово.**
 
-Маленькая бесплатная программа для Windows. Без рекламы, без аккаунта, без расширений для браузера.
+Маленькая бесплатная программа для Windows и кнопка MP3 для браузера (по желанию). Без рекламы, без аккаунта.
 
 [![Скачать для Windows](https://img.shields.io/badge/Скачать-Tunegrab.exe-6D5DF6?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/BukazLucky/tunegrab/releases/latest/download/Tunegrab.exe)
 
@@ -23,6 +23,18 @@
 3. Нажми **Скачать MP3**. Файлы появятся в папке `Музыка\Tunegrab`. Кнопка **Показать** откроет нужный файл.
 
 Всё.
+
+## Кнопка MP3 в браузере (по желанию)
+
+<img src="docs/extension-button.png" alt="Кнопка MP3 рядом с «Нравится» на YouTube" width="640">
+
+Поставь расширение **Tunegrab: кнопка MP3**, и под каждым видео на YouTube рядом с «Нравится» появится кнопка MP3 (на Shorts и в плейлистах она висит в углу). Один клик, и Tunegrab начинает скачивание. Ещё можно нажать правой кнопкой по ссылке на YouTube или на иконку Tunegrab на панели. Расширению нужна программа Tunegrab, данные оно не собирает ([конфиденциальность](PRIVACY.md)).
+
+**Установка с GitHub (Chrome, Edge, Opera, Яндекс, Brave):**
+1. Скачай `tunegrab-extension-chromium-….zip` из [последнего релиза](https://github.com/BukazLucky/tunegrab/releases/latest) и распакуй в папку, которую не будешь удалять.
+2. Открой `chrome://extensions` (в Edge `edge://extensions`, в Яндексе `browser://extensions`) и включи **Режим разработчика**.
+3. Нажми **Загрузить распакованное расширение** и выбери распакованную папку.
+4. Открой видео на YouTube, нажми **MP3**, а когда браузер спросит про Tunegrab, поставь галочку **Всегда разрешать**.
 
 ## Возможности
 

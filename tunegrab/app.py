@@ -17,7 +17,7 @@ from tkinter import filedialog, messagebox
 
 import customtkinter as ctk
 
-from . import engine
+from . import bridge, engine
 
 # ------------------------------------------------------------------ look
 ACCENT = ("#6D5DF6", "#7C6CFF")
@@ -148,7 +148,7 @@ class Row(ctk.CTkFrame):
 
 # ------------------------------------------------------------------ app
 class App(ctk.CTk):
-    def __init__(self):
+    def __init__(self, urls=None):
         super().__init__(fg_color=BG)
         ctk.set_appearance_mode("system")
         self.t = I18n()
@@ -164,6 +164,15 @@ class App(ctk.CTk):
         self.last_clip_check = 0.0
         self.tried_update = False
         self.new_version = None
+        self.ready = False
+        self.pending: list[str] = list(urls or [])
+        self.auto_next = False
+        self.server = None
+        try:
+            self.server = bridge.Server(lambda u: self.ui(self.receive, u))
+        except Exception as e:
+            engine.log(f"bridge server failed: {e}")
+        bridge.register_protocol()
 
         self.folder = Path(self.s.get("folder") or engine.music_dir() / "Tunegrab")
         q = self.s.get("quality", 320)
@@ -381,7 +390,7 @@ class App(ctk.CTk):
         self.update_count()
 
     def check_clipboard(self):
-        if self.busy or hasattr(self, "setup") or time.time() - self.last_clip_check < 1:
+        if self.busy or not self.ready or hasattr(self, "setup") or time.time() - self.last_clip_check < 1:
             return
         self.last_clip_check = time.time()
         try:
@@ -512,7 +521,12 @@ class App(ctk.CTk):
         self.startup_tasks()
 
     def startup_tasks(self):
-        self.check_clipboard()
+        self.ready = True
+        if self.pending:
+            urls, self.pending = self.pending, []
+            self.receive(urls)
+        else:
+            self.check_clipboard()
         engine.start_update()
 
         def bg():
@@ -639,18 +653,53 @@ class App(ctk.CTk):
         self.say(msg, OK if not fail else MUTED)
         if self.cancel.is_set():
             self.say(self.t("st_cancelled"))
+            self.auto_next = False
+        elif self.auto_next and engine.extract_links(self.text()):
+            self.auto_next = False
+            self.after(600, self.start_or_stop)
+
+    # ---------------- links from the browser extension
+    def receive(self, urls):
+        """Called on the UI thread with links from tunegrab:// or a second launch."""
+        self.bring_to_front()
+        if not urls:
+            return
+        engine.log(f"received {len(urls)} link(s) from the browser")
+        if not self.ready:
+            self.pending += urls
+            return
+        self.add_links(urls)
+        self.last_clip = None
+        if self.busy:
+            self.auto_next = True
+            self.say(self.t("from_browser"))
+        else:
+            self.start_or_stop()
+            self.say(self.t("from_browser"))
+
+    def bring_to_front(self):
+        try:
+            self.deiconify()
+            self.lift()
+            self.attributes("-topmost", True)
+            self.after(300, lambda: self.attributes("-topmost", False))
+            self.focus_force()
+        except Exception:
+            pass
 
     def on_close(self):
         if self.busy and not messagebox.askyesno("Tunegrab", self.t("confirm_close"), parent=self):
             return
         self.cancel.set()
         engine.kill_all()
+        if self.server:
+            self.server.close()
         self.destroy()
 
 
-def main():
+def main(urls=None):
     try:
         ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID("Tunegrab.App")
     except Exception:
         pass
-    App().mainloop()
+    App(urls).mainloop()

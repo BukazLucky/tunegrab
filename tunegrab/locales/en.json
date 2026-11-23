@@ -47,5 +47,6 @@
   "new_version": "New version {v} available — click to download",
   "confirm_close": "A download is in progress. Quit anyway?",
   "legal": "Only download content you have the right to.",
-  "help": "Help"
+  "help": "Help",
+  "from_browser": "Link received from the browser"
 }

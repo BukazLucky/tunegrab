@@ -47,5 +47,6 @@
   "new_version": "Nouvelle version {v} disponible — clique pour télécharger",
   "confirm_close": "Un téléchargement est en cours. Quitter quand même ?",
   "legal": "Ne télécharge que le contenu que tu as le droit de télécharger.",
-  "help": "Aide"
+  "help": "Aide",
+  "from_browser": "Lien reçu du navigateur"
 }
