@@ -24,8 +24,20 @@ INSTANCE_FILE = engine.DATA_DIR / "instance.json"
 MAX_MSG = 256 * 1024
 
 
+YOUTUBE_HOSTS = {"youtube.com", "www.youtube.com", "m.youtube.com", "music.youtube.com", "youtu.be"}
+
+
+def is_youtube(u: str) -> bool:
+    """Links that arrive from outside the window (browser, tunegrab://, second launch)
+    are limited to YouTube, so a random web page can't make Tunegrab fetch other addresses."""
+    if not engine.is_safe_url(u):
+        return False
+    host = (urlsplit(u).hostname or "").lower()
+    return urlsplit(u).scheme == "https" and host in YOUTUBE_HOSTS
+
+
 def parse_args(argv: list[str]) -> list[str]:
-    """Collect safe video links from command-line arguments (tunegrab:// links or plain URLs)."""
+    """Collect YouTube links from command-line arguments (tunegrab:// links or plain URLs)."""
     urls: list[str] = []
     for a in argv:
         if a.lower().startswith(PROTO + ":"):
@@ -35,7 +47,7 @@ def parse_args(argv: list[str]) -> list[str]:
             urls += engine.extract_links(a)
     out, seen = [], set()
     for u in urls:
-        if engine.is_safe_url(u) and u not in seen:
+        if is_youtube(u) and u not in seen:
             seen.add(u)
             out.append(u)
     return out[:500]
@@ -93,7 +105,7 @@ class Server:
                 msg = json.loads(data.split(b"\n", 1)[0].decode("utf-8"))
                 if not hmac.compare_digest(str(msg.get("token", "")), self.token):
                     return
-                urls = [u for u in msg.get("urls", []) if isinstance(u, str) and engine.is_safe_url(u)][:500]
+                urls = [u for u in msg.get("urls", []) if isinstance(u, str) and is_youtube(u)][:500]
                 conn.sendall(b"ok\n")
                 self.on_urls(urls)
             except Exception:
