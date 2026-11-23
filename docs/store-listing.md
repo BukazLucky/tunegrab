@@ -13,7 +13,7 @@ Productivity (Edge: "Productivity"; Firefox: "Download Management")
 
 ## Full description (English)
 
-Tunegrab puts an **MP3** button right next to Like and Share on YouTube.
+Tunegrab puts an MP3 button right next to Like and Share on YouTube.
 Click it and the free Tunegrab app for Windows saves the audio as an MP3 with title, artist and cover art.
 
 HOW IT WORKS
@@ -37,7 +37,7 @@ Only download content you have the right to download. Not affiliated with YouTub
 
 ## Full description (Russian)
 
-Tunegrab добавляет кнопку **MP3** рядом с «Нравится» и «Поделиться» на YouTube.
+Tunegrab добавляет кнопку MP3 рядом с «Нравится» и «Поделиться» на YouTube.
 Нажми её, и бесплатная программа Tunegrab для Windows сохранит звук в MP3 с названием, исполнителем и обложкой.
 
 КАК ЭТО РАБОТАЕТ
